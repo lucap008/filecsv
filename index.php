@@ -14,15 +14,15 @@
 <table>
 <?php
     $file = fopen("log.csv", "r");
-    if (!$file) {
+    if(!$file){
         die("Errore nell'apertura del file");
     }
-    while (!feof($file)) {
+    while(!feof($file)){
         $row = fgets($file);
-        if ($row!==false && $row!=="") {
+        if($row!==false && $row!==""){
             $dati = explode(",", $row);
             echo "<tr>";
-            for ($i=0; $i<count($dati); $i++) {
+            for($i=0; $i<count($dati); $i++){
                 echo "<td>" . $dati[$i] . "</td>";
             }
             echo "</tr>";
