@@ -11,15 +11,12 @@
     </style>
 </head>
 <body>
-
 <table>
 <?php
     $file = fopen("log.csv", "r");
-    
     if (!$file) {
         die("Errore nell'apertura del file");
     }
-
     while (!feof($file)) {
         $row = fgets($file);
         if ($row!==false && $row!=="") {
@@ -34,6 +31,5 @@
     fclose($file);
 ?>
 </table>
-
 </body>
 </html>
